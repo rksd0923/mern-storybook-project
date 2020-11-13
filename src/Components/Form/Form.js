@@ -75,7 +75,7 @@ const Form = (props) => {
     return (
         <form className="form">
             {props.type == "voucherForm" ? voucherForm(props) : null}
-            {props.type == "selectAmountForm" ? selectAmountForm(props) : null}
+
             {props.type == "email" ? emailForm(props) : null}
             {props.type == "select" ? selectForm(props) : null}
         </form>
