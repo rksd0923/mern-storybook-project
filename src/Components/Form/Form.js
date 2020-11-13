@@ -12,32 +12,32 @@ const Form = (props) => {
     if (props.large) {
         classes.push("large")
     }
-    if (props.selectBox) {
-        classes.push("selectBox")
+    if (props.filterBox) {
+        classes.push("filterBox")
     }
-    if (props.type == "select") {
-        classes.push("select")
+    if (props.type == "filter") {
+        classes.push("filter")
     }
-    if (props.type == "email") {
-        classes.push("email")
+    if (props.type == "search") {
+        classes.push("search")
     }
-    if (props.type == "voucherForm") {
-        classes.push("voucher-blank")
+    if (props.type == "loginForm") {
+        classes.push("login-blank")
     }
-    if (props.voucherFormLarge) {
-        classes.push("voucherForm-large")
+    if (props.loginFormLarge) {
+        classes.push("loginForm-large")
     }
 
-    const voucherForm = props => {
+    const loginForm = props => {
         let formValue = " "
-        let submitVoucher = (value) => {
+        let submitLogin = (value) => {
             formValue = value
         }
 
-        return <div className="voucher-input">
+        return <div className="login-input">
              <p>{props.placeholder}</p>
-            <voucherForm props={props} className={classes.join(" ")} action={submitVoucher} onSubmit={submitVoucher} />
-            <input type="submit" className="voucherForm-button" value={props.buttonText} />
+            <loginForm props={props} className={classes.join(" ")} action={submitLogin} onSubmit={submitLogin} />
+            <input type="submit" className="loginForm-button" value={props.buttonText} />
         </div>
     }
 
@@ -52,32 +52,32 @@ const Form = (props) => {
             value: evt.target.value
         })
     }
-    const emailForm = props => {
-        return <email value={props.value} className={classes.join(" ")}>
-            <option className="email">Email</option>
+    const searchForm = props => {
+        return <search value={props.value} className={classes.join(" ")}>
+            <option className="search">Search</option>
             <input onChange={Change} onSubmit={Submit}></input>
-        </email>
+        </search>
     }
 
-    const selectForm = props => {
+    const filterForm = props => {
 
         let options = props.options.map(val => {
             return <option>{val}</option>
         })
 
-        return <select value={props.value} className={classes.join(" ")}>
-            <option className="select-default">Select</option>
+        return <filter value={props.value} className={classes.join(" ")}>
+            <option className="filter-default">Filter By:</option>
             {options}
-        </select>
+        </filter>
     }
 
     
     return (
         <form className="form">
-            {props.type == "voucherForm" ? voucherForm(props) : null}
+            {props.type == "loginForm" ? loginForm(props) : null}
 
-            {props.type == "email" ? emailForm(props) : null}
-            {props.type == "select" ? selectForm(props) : null}
+            {props.type == "search" ? searchForm(props) : null}
+            {props.type == "filter" ? filterForm(props) : null}
         </form>
     )
 }

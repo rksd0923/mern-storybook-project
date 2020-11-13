@@ -8,25 +8,25 @@ let options = ["Title", "Rating", "Genre"]
 
 storiesOf('Forms', module)
 
-    //Emails
-    .add('Email Small', () => <Form type="email" placeholder="Email" />)
-    .add('Email Medium', () => <Form type="email" medium placeholder="Email" />)
-    .add('Email Large', () => <Form type="email" large placeholder="Email" />)
+    //Search
+    .add('Search Small', () => <Form type="search" placeholder="Search" />)
+    .add('Search Medium', () => <Form type="search" medium placeholder="Search" />)
+    .add('Search Large', () => <Form type="search" large placeholder="Search" />)
 
-    //Selects
-    .add('Select Small', () => <Form type="select" options={options} />)
-    .add('Select Medium', () => <Form type="select" medium options={options} />)
-    .add('Select Large', () => <Form type="select" large options={options} />)
+    //Filters
+    .add('Filter Small', () => <Form type="filter" options={options} />)
+    .add('Filter Medium', () => <Form type="filter" medium options={options} />)
+    .add('Filter Large', () => <Form type="filter" large options={options} />)
 
-    .add('Select-Box Small', () => <Form type="select" selectBox options={options} />)
-    .add('Select-Box Medium', () => <Form type="select" selectBox medium options={options} />)
-    .add('Select-Box Large', () => <Form type="select" selectBox large options={options} />)
+    .add('Filter-Box Small', () => <Form type="filter" filterBox options={options} />)
+    .add('Filter-Box Medium', () => <Form type="filter" filterBox medium options={options} />)
+    .add('Filter-Box Large', () => <Form type="filter" filterBox large options={options} />)
 
    
 
-    //Voucher
-    .add('Voucher', () => <Form type="voucherForm" placeholder="Voucher code" buttonText="Redeem" medium />)
-    .add('Voucher Large', () => <Form type="voucherForm" placeholder="Voucher code" buttonText="Redeem" voucherFormLarge />)
+    //Log In
+    .add('Login', () => <Form type="loginForm" placeholder="UserName" buttonText="Login" medium />)
+    .add('Login Large', () => <Form type="loginForm" placeholder="UserName" buttonText="Login" loginFormLarge />)
 
     
     
